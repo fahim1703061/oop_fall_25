@@ -23,6 +23,12 @@ class Account {
         this->acc_no = acc_no;
         this->balance = balance;
     }
+    ~Account()
+    {
+        cout <<"\n\nFinal state: "<<endl;
+        display();
+        cout <<"\n\nYour account is being deleted :'(\n" <<endl;
+    }
     void set_acc_no(long long int acc_no);
     void set_balance(double balance);
 
