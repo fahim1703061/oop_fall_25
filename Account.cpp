@@ -80,6 +80,17 @@ double Account::get_balance()
     return balance;
 }
 
+string classify_category(Account acc)
+{
+    double temp_balance = acc.get_balance();
+
+    if (temp_balance>10000){
+        return "Diamond";
+    }
+    else{
+        return "Gold";
+    }
+}
 
 int main()
 {
@@ -117,9 +128,9 @@ int main()
     cout << "All Accounts info.:\n";
     cout <<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
     cout <<"\n\n";
-    cout <<"Account Name    | Balance      \n";
-    cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~  \n";
-    cout <<testAcc.name<<"  |  "<<testAcc.get_balance()<<"  "<<endl; //double precision format
+    cout <<"Account Name    | Balance    |  Account Type  \n";
+    cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~ ~~~| ~~~~~~~~~~~~~~ \n";
+    cout <<testAcc.name<<"  |  "<<testAcc.get_balance()<<"  "<< classify_category(testAcc)<<endl; //double precision format
     cout <<testAcc2.name<<"  |  "<<testAcc2.get_balance()<<"  "<<endl;
 
 //    cout
