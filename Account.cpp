@@ -106,6 +106,11 @@ int main()
     Account testAcc2("Romiz", 1012510005101002, 50000);
     testAcc2.display();
 
+    Account testAcc3;
+    testAcc3 = testAcc2;
+    testAcc3.name = "Iftekhar";
+    testAcc3.display();
+
     //getter function example
 
     cout <<"\n\n";
@@ -116,6 +121,8 @@ int main()
     cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~  \n";
     cout <<testAcc.name<<"  |  "<<testAcc.get_balance()<<"  "<<endl; //double precision format
     cout <<testAcc2.name<<"  |  "<<testAcc2.get_balance()<<"  "<<endl;
+
+//    cout
 
     return 0;
 }
