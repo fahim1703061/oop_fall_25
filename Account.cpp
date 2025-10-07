@@ -32,6 +32,8 @@ class Account {
     void set_acc_no(long long int acc_no);
     void set_balance(double balance);
 
+    double get_balance();
+
     void deposit(float amount) {
         if (amount > 0) {
             balance = balance + amount;
@@ -73,6 +75,10 @@ void Account::set_balance(double balance)
 {
     this->balance = balance;
 }
+double Account::get_balance()
+{
+    return balance;
+}
 
 
 int main()
@@ -91,6 +97,8 @@ int main()
     testAcc.deposit(100);
     testAcc.display();
 
+
+
     //system("clear");
     cout<<endl<<endl;
     testAcc.deposit(40000, "Salary Aug'2025");
@@ -98,8 +106,16 @@ int main()
     Account testAcc2("Romiz", 1012510005101002, 50000);
     testAcc2.display();
 
+    //getter function example
 
-
+    cout <<"\n\n";
+    cout << "All Accounts info.:\n";
+    cout <<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
+    cout <<"\n\n";
+    cout <<"Account Name    | Balance      \n";
+    cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~  \n";
+    cout <<testAcc.name<<"  |  "<<testAcc.get_balance()<<"  "<<endl; //double precision format
+    cout <<testAcc2.name<<"  |  "<<testAcc2.get_balance()<<"  "<<endl;
 
     return 0;
 }
