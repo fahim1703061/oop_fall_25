@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstdlib>
+#include <cstdio>
 using namespace std;
 class Account {
    private:
@@ -92,9 +93,33 @@ string classify_category(Account acc)
     }
 }
 
+
+
+string round(double var, int p=2)
+{
+    // we use array of chars to store number
+    // as a string.
+//    cout<<var<<"\n";
+    char str[40];
+
+    char m =p + '0';
+	const char output[5] = {'%', '.',m,'f','\0'}; //"0.pf"
+    // Print in string the value of var
+    // with two decimal point
+//    sprintf(str, "%.2f", var);
+    sprintf(str, output, var);
+    // scan string value in var
+//    sscanf(str, "%f", &var);
+
+    return str;
+}
+
+
 int main()
 {
     cout<<"------ Hexa Bank ------"<<endl;
+
+
 
     Account testAcc;
 
@@ -114,7 +139,7 @@ int main()
     cout<<endl<<endl;
     testAcc.deposit(40000, "Salary Aug'2025");
 
-    Account testAcc2("Romiz", 1012510005101002, 50000);
+    Account testAcc2("Romiz", 1012510005101002, 50000.52);
     testAcc2.display();
 
     Account testAcc3;
@@ -130,8 +155,8 @@ int main()
     cout <<"\n\n";
     cout <<"Account Name    | Balance    |  Account Type  \n";
     cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~ ~~~| ~~~~~~~~~~~~~~ \n";
-    cout <<testAcc.name<<"  |  "<<testAcc.get_balance()<<"  "<< classify_category(testAcc)<<endl; //double precision format
-    cout <<testAcc2.name<<"  |  "<<testAcc2.get_balance()<<"  "<<endl;
+    cout <<testAcc.name<<"  |  "<<round(testAcc.get_balance())<<"  "<< classify_category(testAcc)<<endl; //double precision format
+    cout <<testAcc2.name<<"  |  "<<round(testAcc2.get_balance(), 4)<<"  "<<endl;
 
 //    cout
 
