@@ -155,7 +155,7 @@ int main()
     cout <<"\n\n";
     cout <<"Account Name    | Balance    |  Account Type  \n";
     cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~ ~~~| ~~~~~~~~~~~~~~ \n";
-    cout <<testAcc.name<<"  |  "<<round(testAcc.get_balance())<<"  "<< classify_category(testAcc)<<endl; //double precision format
+    cout <<testAcc.name<<"  |  "<<round(testAcc.get_balance())<<"  "<<endl; //category removed
     cout <<testAcc2.name<<"  |  "<<round(testAcc2.get_balance(), 4)<<"  "<<endl;
 
 //    cout
