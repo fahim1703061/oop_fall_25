@@ -151,8 +151,21 @@ int main()
 
 //    task 1: Create 1d array with 5 objects, use parameterized constructor
 
-
+    Account accArray[5] = {
+    {"Noman", 1012510005101017, 15000},
+    {"Rifa", 1012510005101002, 9000},
+    {"Fahim", 1012510005101007, 12000},
+    {"Tasnim", 1012510005101006, 7000},
+    {"Dewan", 1012510005101008, 25000}
+    };
 //    task 2: create 2d array [4][2],  use parameterized constructor
+
+    Account acc2D[4][2] = {
+    { Account("Ashik", 1012510005102015, 5000), Account("Arisha", 1012510005102014, 11000) },
+    { Account("Jisan", 1012510005102010, 25000), Account("Udoy", 1012510005102004, 8000) },
+    { Account("Mahi", 1012510005102003, 15000), Account("Jony", 10125100051020019, 6000) },
+    { Account("Jony", 1012510005102020, 10000), Account("Momo", 1012510005102018, 30000) }
+    };
 
     cout <<"\n\n";
     cout << "All Accounts info.:\n";
@@ -165,8 +178,18 @@ int main()
 
     //task1 output
 
+//    cout << "\n\n--- Task 1: 1D Array of Accounts ---\n\n";
+    for (int i = 0; i < 5; i++) {
+        cout <<accArray[i].name<<"  |  "<<round(accArray[i].get_balance(),2)<<"  "<<endl;
+    }
 //    task 2 output
+//    cout << "\n\n--- Task 2: 2D Array of Accounts ---\n\n";
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 2; j++) {
+            cout <<acc2D[i][j].name<<"  |  "<<round(acc2D[i][j].get_balance(),2)<<"  "<<endl;
 
+        }
+    }
 //    cout
 
     return 0;
