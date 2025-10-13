@@ -149,6 +149,11 @@ int main()
 
     //getter function example
 
+//    task 1: Create 1d array with 5 objects, use parameterized constructor
+
+
+//    task 2: create 2d array [4][2],  use parameterized constructor
+
     cout <<"\n\n";
     cout << "All Accounts info.:\n";
     cout <<"~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n";
@@ -157,6 +162,10 @@ int main()
     cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~ ~~~| ~~~~~~~~~~~~~~ \n";
     cout <<testAcc.name<<"  |  "<<round(testAcc.get_balance())<<"  "<<endl; //category removed
     cout <<testAcc2.name<<"  |  "<<round(testAcc2.get_balance(), 4)<<"  "<<endl;
+
+    //task1 output
+
+//    task 2 output
 
 //    cout
 
