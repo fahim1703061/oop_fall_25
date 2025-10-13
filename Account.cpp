@@ -66,6 +66,10 @@ class Account {
         cout << "Account Number: " << acc_no << endl;
         cout << "Balance: " << balance << endl;
     }
+
+//    home task
+//    define transfer function void transfer(toAcc, amount)
+
 };
 
 void Account::set_acc_no(long long int acc_no)
