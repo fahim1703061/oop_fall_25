@@ -70,6 +70,8 @@ class Account {
 //    home task
 //    define transfer function void transfer(toAcc, amount)
 
+    void transfer(Account toAcc, double amount);
+
 };
 
 void Account::set_acc_no(long long int acc_no)
@@ -83,6 +85,20 @@ void Account::set_balance(double balance)
 double Account::get_balance()
 {
     return balance;
+}
+
+void Account::transfer(Account toAcc, double amount)
+{
+    if (amount > 0 && amount <= balance) {
+            balance -= amount;
+            toAcc.balance+=amount;
+            cout << "\n\nFund Transferred Tk. " << amount <<"| Sender Name: "<< name<<"| Receiver Name: "<< toAcc.name<< endl;
+            cout <<"\n\nFund Transfer Successful.\n";
+            display();
+        } else {
+            cout << "\n\nTransfer Failed. Insufficient balance or Invalid amount" << endl;
+        }
+
 }
 
 string classify_category(Account acc)
@@ -194,6 +210,8 @@ int main()
 
         }
     }
+
+    testAcc.transfer(testAcc2, 5000);
 //    cout
 
     return 0;
