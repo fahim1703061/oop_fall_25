@@ -178,6 +178,10 @@ int main()
     {"Tasnim", 1012510005101006, 7000},
     {"Dewan", 1012510005101008, 25000}
     };
+
+    Account *accArrayPtr;
+    accArrayPtr = accArray;
+
 //    task 2: create 2d array [4][2],  use parameterized constructor
 
     Account acc2D[4][2] = {
@@ -198,9 +202,10 @@ int main()
 
     //task1 output
 
-//    cout << "\n\n--- Task 1: 1D Array of Accounts ---\n\n";
+//    cout << "\n\n--- Task 1: 1D Array of Accounts  using pointer---\n\n";
     for (int i = 0; i < 5; i++) {
-        cout <<accArray[i].name<<"  |  "<<round(accArray[i].get_balance(),2)<<"  "<<endl;
+        cout <<accArrayPtr->name<<"  |  "<<round(accArrayPtr->get_balance(),2)<<"  "<<endl;
+        accArrayPtr++;
     }
 //    task 2 output
 //    cout << "\n\n--- Task 2: 2D Array of Accounts ---\n\n";
