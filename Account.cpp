@@ -101,9 +101,9 @@ void Account::transfer(Account toAcc, double amount)
 
 }
 
-string classify_category(Account acc)
+string classify_category(Account *acc)
 {
-    double temp_balance = acc.get_balance();
+    double temp_balance = acc->get_balance();
 
     if (temp_balance>10000){
         return "Diamond";
@@ -197,23 +197,31 @@ int main()
     cout <<"\n\n";
     cout <<"Account Name    | Balance    |  Account Type  \n";
     cout <<"~~~~~~~~~~~~~~~ | ~~~~~~~ ~~~| ~~~~~~~~~~~~~~ \n";
-    cout <<testAcc.name<<"  |  "<<round(testAcc.get_balance())<<"  "<<endl; //category removed
-    cout <<testAcc2.name<<"  |  "<<round(testAcc2.get_balance(), 4)<<"  "<<endl;
+    cout <<testAcc.name<<"  |  "<<round(testAcc.get_balance())<<"  |   "<< classify_category(&testAcc) <<endl; //category removed
+    cout <<testAcc2.name<<"  |  "<<round(testAcc2.get_balance(), 4)<<"  |   "<< classify_category(&testAcc2) <<endl;
 
     //task1 output
 
 //    cout << "\n\n--- Task 1: 1D Array of Accounts  using pointer---\n\n";
     for (int i = 0; i < 5; i++) {
-        cout <<accArrayPtr->name<<"  |  "<<round(accArrayPtr->get_balance(),2)<<"  "<<endl;
+        cout <<accArrayPtr->name<<"  |  "<<round(accArrayPtr->get_balance(),2)<<"  |   "<< classify_category(accArrayPtr) <<endl;
         accArrayPtr++;
     }
 //    task 2 output
 //    cout << "\n\n--- Task 2: 2D Array of Accounts ---\n\n";
-    for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 2; j++) {
-            cout <<acc2D[i][j].name<<"  |  "<<round(acc2D[i][j].get_balance(),2)<<"  "<<endl;
+//    for (int i = 0; i < 4; i++) {
+//        for (int j = 0; j < 2; j++) {
+//            cout <<acc2D[i][j].name<<"  |  "<<round(acc2D[i][j].get_balance(),2)<<"  "<<endl;
+//
+//        }
+//    }
 
-        }
+    cout << "\n Access 2D Array via Pointer ---\n";
+
+    Account* ptr2D = &acc2D[0][0];
+    for (int i = 0; i < 4 * 2; i++) {
+    cout << ptr2D->name <<"  |  "<< round(ptr2D->get_balance(), 2)<<"  |   "<< classify_category(ptr2D) << endl;
+    ptr2D++;
     }
 
     testAcc.transfer(testAcc2, 5000);
